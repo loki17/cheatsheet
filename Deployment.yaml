@@ -1,0 +1,9 @@
+apiversion :v1/beta1
+kind : Deployment 
+metadata :
+  name : myfile
+  label : new
+spec:
+  container : 
+    name :ngnix
+    tag: latest

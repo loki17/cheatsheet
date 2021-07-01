@@ -1,9 +1,19 @@
-apiversion :v1/beta1
+apiversion : v1/beta1
 kind : Deployment 
-metadata :
-  name : myfile
-  label : new
+metadata:
+  name: nginx
+  labels:
+    app: nginx
 spec:
-  container : 
-    name :ngnix
-    tag: latest
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+    
